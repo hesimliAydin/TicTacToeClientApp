@@ -39,13 +39,9 @@ namespace TicTacToeClientApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Player_Name.Text == string.Empty || string.IsNullOrWhiteSpace(Player_Name.Text))
-                MessageBox.Show("Enter player Name", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-            else
-            {
+            
                 ConnectToServer();
                 RequestLoop();
-            }
         }
 
 
@@ -196,7 +192,7 @@ namespace TicTacToeClientApp
                         IsMyTurn = false;
                 }
 
-                //EnabledAllButtons(true);
+                //EnabledAllButtons(false);
 
                 if ((row1[0] == "X" && row1[1] == "X" && row1[2] == "X") || (row2[0] == "X" && row2[1] == "X" && row2[2] == "X") || (row3[0] == "X" && row3[1] == "X" && row3[2] == "X")
                     || (row1[0] == "X" && row2[1] == "X" && row3[2] == "X") || (row3[0] == "X" && row2[1] == "X" && row1[3] == "X")
